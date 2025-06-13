@@ -2,6 +2,7 @@ package dev.scastillo.admin.adapter.web.mapper;
 
 import dev.scastillo.admin.adapter.web.dto.AdminUserRequestDto;
 import dev.scastillo.admin.adapter.web.dto.AdminUserResponseDto;
+import dev.scastillo.admin.adapter.web.dto.ValidateAdminUserResponseDto;
 import dev.scastillo.admin.domain.model.AdminUser;
 import org.mapstruct.Mapper;
 
@@ -9,4 +10,5 @@ import org.mapstruct.Mapper;
 public interface AdminUserMapper {
     AdminUser toDomain(AdminUserRequestDto dto);
     AdminUserResponseDto toDto(AdminUser adminUser);
+    ValidateAdminUserResponseDto toValidateDto(AdminUser adminUser);
 }

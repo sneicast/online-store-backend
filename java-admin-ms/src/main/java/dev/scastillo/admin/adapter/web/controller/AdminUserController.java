@@ -2,6 +2,7 @@ package dev.scastillo.admin.adapter.web.controller;
 
 import dev.scastillo.admin.adapter.web.dto.AdminUserRequestDto;
 import dev.scastillo.admin.adapter.web.dto.AdminUserResponseDto;
+import dev.scastillo.admin.adapter.web.dto.ValidateAdminUserResponseDto;
 import dev.scastillo.admin.adapter.web.mapper.AdminUserMapper;
 import dev.scastillo.admin.domain.model.AdminUser;
 import dev.scastillo.admin.domain.service.AdminUserService;
@@ -30,9 +31,9 @@ public class AdminUserController {
     }
 
     @GetMapping("/email/{email}")
-    public AdminUserResponseDto getAdminUserByEmail(@PathVariable String email) {
+    public ValidateAdminUserResponseDto getAdminUserByEmail(@PathVariable String email) {
         AdminUser adminUser = adminUserService.getAdminUserByEmail(email);
-        return adminUserMapper.toDto(adminUser);
+        return adminUserMapper.toValidateDto(adminUser);
     }
     @PutMapping("/{id}")
     public AdminUserResponseDto updateAdminUser(@PathVariable UUID id, @RequestBody AdminUserRequestDto request) {

@@ -2,6 +2,7 @@ package dev.scastillo.customer.adapter.web.mapper;
 
 import dev.scastillo.customer.adapter.web.dto.CustomerCreateRequestDto;
 import dev.scastillo.customer.adapter.web.dto.CustomerDto;
+import dev.scastillo.customer.adapter.web.dto.ValidateCustomerResponseDto;
 import dev.scastillo.customer.domain.model.Customer;
 import org.mapstruct.Mapper;
 
@@ -9,4 +10,5 @@ import org.mapstruct.Mapper;
 public interface CustomerMapper {
     Customer toDomain(CustomerCreateRequestDto dto);
     CustomerDto toDto(Customer customer);
+    ValidateCustomerResponseDto toDtoValidateCustomer(Customer customer);
 }

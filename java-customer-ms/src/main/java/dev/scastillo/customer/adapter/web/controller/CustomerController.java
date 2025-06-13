@@ -2,6 +2,7 @@ package dev.scastillo.customer.adapter.web.controller;
 
 import dev.scastillo.customer.adapter.web.dto.CustomerCreateRequestDto;
 import dev.scastillo.customer.adapter.web.dto.CustomerDto;
+import dev.scastillo.customer.adapter.web.dto.ValidateCustomerResponseDto;
 import dev.scastillo.customer.adapter.web.mapper.CustomerMapper;
 import dev.scastillo.customer.domain.model.Customer;
 import dev.scastillo.customer.domain.service.CustomerService;
@@ -31,8 +32,8 @@ public class CustomerController {
     }
 
     @GetMapping("/username/{username}")
-    public CustomerDto getCustomerByUsername(@PathVariable String username) {
+    public ValidateCustomerResponseDto getCustomerByUsername(@PathVariable String username) {
         Customer customer = customerService.getCustomerByUsername(username);
-        return customerMapper.toDto(customer);
+        return customerMapper.toDtoValidateCustomer(customer);
     }
 }
