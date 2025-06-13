@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: auth-service
+server:
+  port: 8086
+
+external:
+  services:
+    customer:
+      base-url: http://localhost:8080
+    admin:
+        base-url: http://localhost:8085
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 3600 # in seconds
