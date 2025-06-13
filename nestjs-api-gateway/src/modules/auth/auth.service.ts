@@ -1,8 +1,8 @@
-import { HttpException, Injectable } from '@nestjs/common';
+import {  Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
-import { firstValueFrom } from 'rxjs';
+
 import { ConfigService } from '@nestjs/config';
-import { HttpErrorUtil } from 'src/common/utils/http-error.util';
+
 import { BaseApiService } from 'src/common/services/base-api.service';
 
 @Injectable()
@@ -33,4 +33,5 @@ export class AuthService extends BaseApiService {
 
         return this.makeRequest(request$);
     }
+    
 }
